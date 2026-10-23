@@ -25,6 +25,18 @@
 
 ---
 
+## 实拍效果
+
+**悬浮窗浮在 TV 桌面上** —— LocalSend 的 PiP 小窗（正用它往电视推 APK）：
+
+![悬浮窗浮在 TV 桌面](docs/images/screenshot-tv-home.jpg)
+
+**悬浮窗浮在 HDMI 画面上** —— 左侧是竖屏手机预设的 LocalSend（9:16 + 411dp），右边是 PC 控制台正在调参：
+
+![悬浮窗浮在 HDMI 画面](docs/images/screenshot-hdmi-pip.jpg)
+
+---
+
 ## 功能特性
 
 **TV 端（LSPosed 模块）**
