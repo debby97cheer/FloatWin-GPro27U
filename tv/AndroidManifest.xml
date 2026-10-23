@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gpro27u.floatwin"
+    android:versionCode="34"
+    android:versionName="34.0">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
+
+    <application android:label="悬浮画面" android:hasCode="true">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription"
+            android:value="把选中的应用强制变成画中画（PiP），浮在包括 HDMI 输入在内的所有界面之上。v7：①覆盖 density（含 screenWidthDp）；②放大 PiP 窗口；③位置可调；④新增竖屏手机预设 floatwin_pip_preset=phone（9:16 + 411dp + sw411）。⑤实时拖动。⑥v10/v11 遥控中转：system_server 抓导航键广播给 PiP 里的 App，PiP 侧收后调用自己的 dispatchKeyEvent，于是可以遥控悬浮窗里的 App（默认开；写 0 到 floatwin_key_relay 关闭）。v11 修复：目标上报改用广播（App 写不进 /data/local/tmp，v10 中转实际没发出去）。⑦焦点强占实验（默认关）：echo 1 > floatwin_focus_grab。：把 floatwin_pip_pos 写成 x,y 绝对坐标即可实时挪窗口，无需重启 App（SystemUI 守护线程每 250ms 轮询 + hook getBounds 平移）。touch /data/local/tmp/floatwin_pip_query 可查询当前 bounds。可调：floatwin_pip_preset / _size / _scale / _pos / _target_dp / _sw / _orient / _focus。作用域需勾选【系统框架】+【SystemUI】+【目标应用】。⑧v12 消黑屏：进 PiP 后自动把 HDMI 直通源拉回前台（Android 标准 TvInput API，不需要私有类名），前台不再退回小米桌面，Windows 就不会黑屏重同步（默认开；写 0 到 floatwin_home_restore 关闭；可用 floatwin_hdmi_id 指定源、floatwin_hdmi_cmp 指定组件）。⑨v12 隐形启动（默认关，echo 1 > floatwin_ghost）：把 App 首屏窗口调透明，盖住启动黑底。⑩v12 多候选查找：按键抓取点按 PhoneWindowManager / MiuiPhoneWindowManager 等多个候选类逐个探测，兼容不同 ROM。" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <meta-data android:name="xposedsharedprefs" android:value="true" />
+    </application>
+</manifest>

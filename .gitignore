@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+build/out/
+build/FloatWinConsole/
+*.log
+.venv*/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
